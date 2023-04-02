@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            background-image: url('https://fantasy.premierleague.com/static/media/pitch-default.dab51b01.svg');
+            height: 100vh;
+            background-size: cover;
+        }
+        .card{
+            background-color: transparent;
+        }
+        .card-text{
+            background-color: rgb(55, 0, 60);
+            color: white;
+            text-align: center;
+        }
+        .card-body{
+            padding: 0 !important;
+        }
+    </style>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+            {% for x in goalkeepers[0] %}
+
+            <div class="col">
+                <div class="card" style="width: 10rem;height: 11rem;">
+                  <img style="height: 100%" src="static/player_photo/{{x}}.png" class="card-img-top" alt="...">
+
+                    
+                  <div class="card-body">
+                      <p class="card-text">{{x}}</p>
+                    </div>
+                  </div>
+            </div>
+
+            {% endfor %}
+            <div class="col">
+
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+        
+
+        <div class="row">
+          {% for x in defenders[0] %}
+          <div class="col">
+              <div class="card" style="width: 10rem;height: 11rem;">
+                <img style="height: 100%" src="static/player_photo/{{x}}.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{x}}</p>
+                  </div>
+                </div>
+          </div>
+          {% endfor %}
+         
+        </div>
+        
+
+        <div class="row">
+
+          {% if midfielders[0]|length < 3  %}
+            <div class="col">
+
+            </div>
+           
+            {% endif %}
+
+          {% for x in midfielders[0]  %}
+          <div class="col">
+              <div class="card" style="width: 10rem;height: 11rem;">
+                <img style="height: 100%" src="static/player_photo/{{x}}.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{x}}</p>
+                  </div>
+                </div>
+          </div>
+          {% endfor %}
+
+          {% if midfielders[0]|length < 3  %}
+            <div class="col">
+
+            </div>
+           
+            {% endif %}
+
+         
+        </div>
+        
+        <div class="row">
+
+          <div class="col">
+
+          </div>
+          <div class="col">
+
+          </div>
+
+          {% for x in attackers[0] %}
+          <div class="col">
+              <div class="card" style="width: 10rem;height: 11rem;">
+                <img style="height: 100%" src="static/player_photo/{{x}}.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">{{x}}</p>
+                  </div>
+                </div>
+          </div>
+          {% endfor %}
+
+          <div class="col">
+
+          </div>
+          <div class="col">
+
+          </div>
+         
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <a href="/" class="btn btn-danger">
+              3-5-2
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="/?defenders=3&midfilders=4&attackers=3" class="btn btn-danger">
+              3-4-3
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="/?defenders=4&midfilders=5&attackers=1" class="btn btn-danger">
+              4-5-1
+            </a>
+          </div>
+
+          <div class="col">
+            <a href="/?defenders=4&midfilders=4&attackers=2" class="btn btn-danger">
+              4-4-2
+            </a>
+          </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <a href="/?defenders=4&midfilders=3&attackers=3" class="btn btn-danger">
+                4-3-3
+              </a>
+            </div>
+  
+  
+            <div class="col">
+              <a href="/?defenders=5&midfilders=4&attackers=1" class="btn btn-danger">
+                5-4-1
+              </a>
+            </div>
+  
+  
+            <div class="col">
+              <a href="/?defenders=5&midfilders=3&attackers=2" class="btn btn-danger">
+                5-3-2
+              </a>
+            </div>
+  
+  
+            <div class="col">
+              <a href="/?defenders=5&midfilders=2&attackers=3" class="btn btn-danger">
+                5-2-3
+              </a>
+            </div>
+          </div>
+
+          
+        </div>
+
+      
+    </div>
+</body>
+</html>
